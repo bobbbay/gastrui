@@ -8,7 +8,7 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { WelcomeScreen, DemoScreen, DemoListScreen, DailyWorkflowIntroductionScreen } from "../screens"
+import { DailyWorkflowIntroductionScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 
 /**
@@ -31,7 +31,6 @@ export type NavigatorParamList = {
   // 🔥 Your screens go here
 }
 
-// Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createNativeStackNavigator<NavigatorParamList>()
 
 const AppStack = () => {
@@ -43,10 +42,6 @@ const AppStack = () => {
       initialRouteName="dailyWorkflowIntroduction"
     >
       <Stack.Screen name="dailyWorkflowIntroduction" component={DailyWorkflowIntroductionScreen} />
-      <Stack.Screen name="welcome" component={WelcomeScreen} />
-      <Stack.Screen name="demo" component={DemoScreen} />
-      <Stack.Screen name="demoList" component={DemoListScreen} />
-      {/** 🔥 Your screens go here */}
     </Stack.Navigator>
   )
 }
@@ -78,5 +73,5 @@ AppNavigator.displayName = "AppNavigator"
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ["welcome"]
+const exitRoutes = []
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)

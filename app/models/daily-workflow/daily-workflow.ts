@@ -1,5 +1,7 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
 
+const PAGES: number = 9;
+
 /**
  * Model description here for TypeScript hints.
  */
@@ -8,11 +10,19 @@ export const DailyWorkflowModel = types.model("DailyWorkflow").props({
   })
   .actions((self) => ({
     increment() {
-      self.index += 1;
+      if (self.index < PAGES) {
+        self.index += 1;
+      } else {
+        self.index = 0;
+      }
     },
 
     decrement() {
-      self.index -= 1;
+      if (self.index > 0) {
+        self.index -= 1;
+      } else {
+        self.index = PAGES;
+      }
     },
 
     reset() {

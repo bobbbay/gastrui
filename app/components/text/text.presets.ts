@@ -25,6 +25,7 @@ export const presets = {
     color: color.palette.darkRed,
     textShadowColor: "rgba(196, 196, 196, 0.25)",
     textShadowOffset: { width: 0, height: 4 },
+    textShadowRadius: 10,
   } as TextStyle,
 
   paragraph: {
@@ -39,6 +40,16 @@ export const presets = {
     fontSize: 14,
     alignSelf: "center",
     marginVertical: 10,
+  } as TextStyle,
+
+  additional: {
+    ...BASE,
+    fontFamily: typography.catchphrase,
+    fontSize: 18,
+    fontStyle: "italic",
+    alignSelf: "center",
+    marginVertical: 30,
+    color: color.palette.offWhite,
   } as TextStyle,
 
   button: {
