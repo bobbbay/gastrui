@@ -19,7 +19,7 @@ const TITLE_MIDDLE: ViewStyle = { flex: 1, justifyContent: "center" }
 const LEFT: ViewStyle = { width: 32 }
 const RIGHT: ViewStyle = { width: 32 }
 
-const logo = require("./logo.png")
+const logo = require("../../../assets/images/logo.png")
 
 const LOGO: ImageStyle = {
   alignSelf: "center",

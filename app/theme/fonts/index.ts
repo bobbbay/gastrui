@@ -1,12 +1,11 @@
-// import * as Font from "expo-font"
+import * as Font from "expo-font"
+
+import { ChakraPetch_400Regular, ChakraPetch_600SemiBold } from "@expo-google-fonts/chakra-petch"
 
 export const initFonts = async () => {
-  // Refer to ./assets/fonts/custom-fonts.md for instructions.
-  // ...
-  // Welcome back! Just uncomment this and replace/append with your font file names!
-  // ⬇
-  // await Font.loadAsync({
-  //   Montserrat: require("./Montserrat-Regular.ttf"),
-  //   "Montserrat-Regular": require("./Montserrat-Regular.ttf"),
-  // })
+  await Font.loadAsync({
+    GoodTimes_400Regular   : require("./good-times.otf"),
+    ChakraPetch_400Regular: ChakraPetch_400Regular,
+    ChakraPetch_600SemiBold: ChakraPetch_600SemiBold,
+  })
 }

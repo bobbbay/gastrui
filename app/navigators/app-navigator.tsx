@@ -40,10 +40,10 @@ const AppStack = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="welcome"
+      initialRouteName="dailyWorkflowIntroduction"
     >
-      <Stack.Screen name="welcome" component={WelcomeScreen} />
       <Stack.Screen name="dailyWorkflowIntroduction" component={DailyWorkflowIntroductionScreen} />
+      <Stack.Screen name="welcome" component={WelcomeScreen} />
       <Stack.Screen name="demo" component={DemoScreen} />
       <Stack.Screen name="demoList" component={DemoListScreen} />
       {/** 🔥 Your screens go here */}

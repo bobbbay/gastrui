@@ -14,6 +14,16 @@ import { Platform } from "react-native"
  * The various styles of fonts are defined in the <Text /> component.
  */
 export const typography = {
+  header: "GoodTimes_400Regular",
+
+  paragraph: "Poppins_400Regular",
+
+  catchphrase: "ChakraPetch_400Regular",
+
+  button: "ChakraPetch_600SemiBold",
+
+  // ---
+
   /**
    * The primary font.  Used in most places.
    */

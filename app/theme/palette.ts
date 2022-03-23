@@ -8,4 +8,8 @@ export const palette = {
   lighterGrey: "#CDD4DA",
   angry: "#dd3333",
   deepPurple: "#5D2555",
+
+  brightRed: "#ED1C24",
+  darkRed: "#A21D21",
+  basicallyBlack: "#000B26",
 }

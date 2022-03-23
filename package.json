@@ -28,6 +28,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/chakra-petch": "^0.2.2",
     "@expo/webpack-config": "^0.12.71",
     "@react-native-async-storage/async-storage": "^1.14.1",
     "@react-navigation/native": "~6.0.1",
@@ -35,6 +36,7 @@
     "@react-navigation/stack": "~6.0.1",
     "apisauce": "2.0.0",
     "expo": "43.0.0",
+    "expo-font": "~10.0.3",
     "expo-linear-gradient": "^11.0.3",
     "expo-localization": "12.0.1",
     "expo-modules-core": "^0.6.5",

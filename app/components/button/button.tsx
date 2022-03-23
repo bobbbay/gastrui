@@ -1,8 +1,9 @@
 import * as React from "react"
 import { TouchableOpacity } from "react-native"
 import { Text } from "../text/text"
-import { viewPresets, textPresets } from "./button.presets"
+import { viewPresets } from "./button.presets"
 import { ButtonProps } from "./button.props"
+import { presets } from "../text/text.presets"
 
 /**
  * For your text displaying needs.
@@ -12,7 +13,8 @@ import { ButtonProps } from "./button.props"
 export function Button(props: ButtonProps) {
   // grab the props
   const {
-    preset = "primary",
+    preset = "button",
+    textPreset = "button",
     tx,
     text,
     style: styleOverride,
@@ -23,10 +25,10 @@ export function Button(props: ButtonProps) {
 
   const viewStyle = viewPresets[preset] || viewPresets.primary
   const viewStyles = [viewStyle, styleOverride]
-  const textStyle = textPresets[preset] || textPresets.primary
+  const textStyle = presets[preset] || presets.button
   const textStyles = [textStyle, textStyleOverride]
 
-  const content = children || <Text tx={tx} text={text} style={textStyles} />
+  const content = children || <Text tx={tx} text={text} style={textStyles} preset={textPreset} />
 
   return (
     <TouchableOpacity style={viewStyles} {...rest}>

@@ -1368,6 +1368,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@expo-google-fonts/chakra-petch@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/chakra-petch/-/chakra-petch-0.2.2.tgz#9482d60614718f9dbce3d5e0ac45ae6fa3b1c0ea"
+  integrity sha512-KGUOP8CBbMMfLNaFUKz0lOeeglRCnP5/cVWXQfDvllnN5CSn8/U6aVYYcxpT+k4iqeLylYIGRxdhu1n7seHxOQ==
+
 "@expo/bunyan@3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@expo/bunyan/-/bunyan-3.0.2.tgz#775680bd479a8b79ada4a5676936a58eef1579c9"

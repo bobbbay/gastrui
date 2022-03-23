@@ -16,6 +16,32 @@ const BASE: TextStyle = {
  * You want to customize these to whatever you need in your app.
  */
 export const presets = {
+  header: {
+    ...BASE,
+    fontFamily: typography.header,
+    fontSize: 36,
+  } as TextStyle,
+
+  paragraph: {
+    ...BASE,
+    fontFamily: typography.paragraph,
+    fontSize: 36,
+  } as TextStyle,
+
+  catchphrase: {
+    ...BASE,
+    fontFamily: typography.catchphrase,
+    fontSize: 14,
+    alignSelf: "center",
+    marginVertical: 10,
+  } as TextStyle,
+
+  button: {
+    ...BASE,
+    fontFamily: typography.button,
+    fontSize: 20,
+  } as TextStyle,
+
   /**
    * The default text styles.
    */
@@ -25,11 +51,6 @@ export const presets = {
    * A bold version of the default text.
    */
   bold: { ...BASE, fontWeight: "bold" } as TextStyle,
-
-  /**
-   * Large headers.
-   */
-  header: { ...BASE, fontSize: 24, fontWeight: "bold" } as TextStyle,
 
   /**
    * Field labels that appear on forms above the inputs.

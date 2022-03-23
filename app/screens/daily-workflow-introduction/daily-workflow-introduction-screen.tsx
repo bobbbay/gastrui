@@ -1,9 +1,9 @@
 import React, { FC } from "react"
 import { observer } from "mobx-react-lite"
-import { ImageStyle, View, ViewStyle } from "react-native"
+import { ImageStyle, TextStyle, View, ViewStyle } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { NavigatorParamList } from "../../navigators"
-import { AutoImage, Button, Header } from "../../components"
+import { AutoImage, Button, Header, Text } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 
@@ -16,6 +16,13 @@ const header = require("../../screens/daily-workflow-introduction/chronogrill-he
 
 const HEADER: ImageStyle = {
   alignSelf: "center",
+}
+
+const CONTINUE: ViewStyle = {
+}
+
+const CONTINUE_TEXT: TextStyle = {
+  alignSelf: "flex-end",
 }
 
 export const DailyWorkflowIntroductionScreen: FC<StackScreenProps<NavigatorParamList, "dailyWorkflowIntroduction">> = observer(
@@ -32,9 +39,12 @@ export const DailyWorkflowIntroductionScreen: FC<StackScreenProps<NavigatorParam
           onLeftPress={goBack}
         />
         <AutoImage source={header} style={HEADER} />
+        <Text text="The world's hot(test) grill." preset="catchphrase" />
         <Button
           testID="next-screen-button"
           tx="welcomeScreen.continue"
+          style={CONTINUE}
+          textStyle={CONTINUE_TEXT}
           onPress={nextScreen}
         />
       </View>

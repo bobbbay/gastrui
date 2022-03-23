@@ -1,6 +1,7 @@
 import { StyleProp, TextStyle, TouchableOpacityProps, ViewStyle } from "react-native"
 import { ButtonPresetNames } from "./button.presets"
 import { TxKeyPath } from "../../i18n"
+import { TextPresets } from "../text/text.presets"
 
 export interface ButtonProps extends TouchableOpacityProps {
   /**
@@ -24,9 +25,14 @@ export interface ButtonProps extends TouchableOpacityProps {
   textStyle?: StyleProp<TextStyle>
 
   /**
-   * One of the different types of text presets.
+   * One of the different types of button presets.
    */
   preset?: ButtonPresetNames
+
+  /**
+   * One of the different types of text style presets.
+   */
+  textPreset?: TextPresets,
 
   /**
    * One of the different types of text presets.
