@@ -20,6 +20,11 @@ export const presets = {
     ...BASE,
     fontFamily: typography.header,
     fontSize: 36,
+    fontStyle: "italic",
+    textAlign: "center",
+    color: color.palette.darkRed,
+    textShadowColor: "rgba(196, 196, 196, 0.25)",
+    textShadowOffset: { width: 0, height: 4 },
   } as TextStyle,
 
   paragraph: {

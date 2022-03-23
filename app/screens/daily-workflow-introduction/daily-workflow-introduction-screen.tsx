@@ -5,7 +5,7 @@ import { StackScreenProps } from "@react-navigation/stack"
 import { NavigatorParamList } from "../../navigators"
 import { AutoImage, Button, Header, Text } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
-// import { useStores } from "../../models"
+import { useStores } from "../../models"
 
 const ROOT: ViewStyle = {
   backgroundColor: "#000B26",
@@ -27,10 +27,9 @@ const CONTINUE_TEXT: TextStyle = {
 
 export const DailyWorkflowIntroductionScreen: FC<StackScreenProps<NavigatorParamList, "dailyWorkflowIntroduction">> = observer(
   ({ navigation }) => {
+    const { dwfStore } = useStores()
+
     const goBack = () => navigation.goBack()
-    const nextScreen = () => navigation.navigate("dailyWorkflowIntroduction")
-    // Pull in one of our MST stores
-    // const { someStore, anotherStore } = useStores()
 
     return (
       <View style={ROOT}>
@@ -38,8 +37,21 @@ export const DailyWorkflowIntroductionScreen: FC<StackScreenProps<NavigatorParam
           leftIcon="back"
           onLeftPress={goBack}
         />
-        <AutoImage source={header} style={HEADER} />
-        <Text text="The world's hot(test) grill." preset="catchphrase" />
+        {dwfToView(dwfStore.index)}
+      </View>
+    )
+  },
+)
+
+function dwfToView(index: number): JSX.Element {
+  const { dwfStore } = useStores()
+  const nextScreen = () => dwfStore.increment();
+
+  switch (index) {
+    case 1: return (
+      <View>
+        <Text text="Begin daily cleanup" preset="header" />
+        <Text text="Refer to operator manual" preset="catchphrase" />
         <Button
           testID="next-screen-button"
           tx="welcomeScreen.continue"
@@ -49,5 +61,18 @@ export const DailyWorkflowIntroductionScreen: FC<StackScreenProps<NavigatorParam
         />
       </View>
     )
-  },
-)
+    default:
+    case 0: return (
+      <View>
+        <AutoImage source={header} style={HEADER} />
+        <Text text="The world's hot(test) grill." preset="catchphrase" />
+        <Button
+          testID="next-screen-button"
+          tx="welcomeScreen.continue"
+          style={CONTINUE}
+          textStyle={CONTINUE_TEXT}
+          onPress={nextScreen}
+        />
+      </View>)
+  }
+}
