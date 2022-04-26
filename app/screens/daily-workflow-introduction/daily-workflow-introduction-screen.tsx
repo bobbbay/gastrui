@@ -74,6 +74,33 @@ function dwfToView(index: number): JSX.Element {
         />
       </View>
     )
+    case 2: return (
+      <View>
+        <Text text="Fire it up!" preset="header" />
+        <Text text="Turn on six burners" preset="additional" />
+        <Button
+          testID="next-screen-button"
+          tx="welcomeScreen.continue"
+          style={CONTINUE}
+          textStyle={CONTINUE_TEXT}
+          onPress={nextScreen}
+        />
+      </View>
+    )
+    case 3: return (
+      <View>
+        <Text text="Heating up" preset="header" />
+        <Text text="Waiting to reach 400°F,
+                    Wait until notified to proceed" preset="additional" />
+        <Button
+          testID="next-screen-button"
+          tx="welcomeScreen.continue"
+          style={CONTINUE}
+          textStyle={CONTINUE_TEXT}
+          onPress={nextScreen}
+        />
+      </View>
+    )
     default: return dwfToView(0)
   }
 }
